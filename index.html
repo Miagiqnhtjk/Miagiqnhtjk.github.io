@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan Martin Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #222;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 20px;
+      min-height: 100vh;
+    }
+
+    /* Welcome */
+    #home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    #home h1 {
+      font-size: 3rem;
+    }
+
+    /* Projects */
+    #projects a {
+      display: block;
+      margin: 10px 0;
+      color: blue;
+    }
+
+    /* Profile */
+    #profile {
+      background: #fafafa;
+    }
+
+    /* Social */
+    #social a {
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      #home h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>hello❤️</h1>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#profile">Profile</a>
+    <a href="#social">Contact</a>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="home">
+    <h1>Hi, I'm Jonathan Martin, a Future Developer!</h1>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Here are some of my projects:</p>
+    <a href="https://github.com/Miagiqnhtjk" target="_blank">GitHub Projects</a>
+    <a href="https://miagiqnhtjk.github.io/" target="_blank">Portfolio Website</a>
+  </section>
+
+  <!-- Profile Section -->
+  <section id="profile">
+    <h2>About Me</h2>
+    <p>I am a Software and App Design student at EVIT with experience in Python, Java, and databases. I enjoy building applications and improving my coding skills through projects and challenges.</p>
+  </section>
+
+  <!-- Social Section -->
+  <section id="social">
+    <h2>Connect with Me</h2>
+    <a href="https://www.linkedin.com/in/jonathan-martin-3128233a7" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Miagiqnhtjk" target="_blank">GitHub</a>
+  </section>
+
 </body>
 </html>
