@@ -1,113 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jonathan Martin Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonathan Martin | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; }
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #3b82f6;
+      --accent-2: #22c55e;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
 
-    /* Navbar */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: #222;
-      color: white;
       display: flex;
-      justify-content: space-around;
-      padding: 15px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1f2937;
       z-index: 1000;
     }
-    nav a {
-      color: white;
+
+    nav h2 { font-weight: 600; }
+
+    nav .links a {
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: bold;
+      color: var(--text);
+      font-weight: 500;
+      transition: 0.3s;
     }
 
+    nav .links a:hover { color: var(--accent); }
+
     section {
-      padding: 80px 20px;
+      padding: 100px 40px;
       min-height: 100vh;
     }
 
-    /* Welcome */
+    /* HERO */
     #home {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #f4f4f4;
       text-align: center;
     }
+
     #home h1 {
       font-size: 3rem;
+      margin-bottom: 15px;
     }
 
-    /* Projects */
-    #projects a {
-      display: block;
-      margin: 10px 0;
-      color: blue;
+    #home p {
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 25px;
     }
 
-    /* Profile */
-    #profile {
-      background: #fafafa;
+    .btn {
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
     }
 
-    /* Social */
-    #social a {
-      display: block;
-      margin: 10px 0;
+    .btn-primary {
+      background: var(--accent);
+      color: white;
     }
 
-    /* Responsive */
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* SECTION TITLES */
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* PROJECTS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid #1f2937;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 15px; }
+
+    /* PROFILE */
+    #profile p {
+      max-width: 600px;
+      color: var(--muted);
+    }
+
+    /* SOCIAL */
+    .social-links a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-top: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      border-top: 1px solid #1f2937;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      #home h1 {
-        font-size: 2rem;
-      }
+      nav { flex-direction: column; }
+      #home h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- NAVBAR -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#profile">Profile</a>
-    <a href="#social">Contact</a>
+    <h2>Jonathan Martin</h2>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#profile">Profile</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <!-- Welcome Section -->
+  <!-- HERO -->
   <section id="home">
     <h1>Welcome to my portfolio webpage!</h1>
+    <p>I build clean, efficient applications using Python, Java, and modern development practices.</p>
+    <div>
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
-    <p>Here are some of my projects:</p>
-    <a href="https://github.com/Miagiqnhtjk" target="_blank">GitHub Projects</a>
-    <a href="https://miagiqnhtjk.github.io/" target="_blank">Portfolio Website</a>
+    <div class="grid">
+      <div class="card">
+        <h3>GitHub Portfolio</h3>
+        <p>Collection of my coding projects and repositories.</p>
+        <a href="https://github.com/Miagiqnhtjk" target="_blank" class="btn btn-primary">View</a>
+      </div>
+
+      <div class="card">
+        <h3>Personal Website</h3>
+        <p>My live portfolio showcasing my work and skills.</p>
+        <a href="https://miagiqnhtjk.github.io/" target="_blank" class="btn btn-primary">Visit</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Profile Section -->
+  <!-- PROFILE -->
   <section id="profile">
     <h2>About Me</h2>
-    <p>I am a Software and App Design student at EVIT with experience in Python, Java, and databases. I enjoy improving my coding skills through challenges and practice.</p>
+    <p>
+      I am a Software and App Design student with experience in Python, Java, and databases. I enjoy solving problems and continuously improving my development skills. My goal is to become a better developer and contribute to real-world applications.
+    </p>
   </section>
 
-  <!-- Social Section -->
-  <section id="social">
+  <!-- CONTACT -->
+  <section id="contact">
     <h2>Connect with Me</h2>
-    <a href="https://www.linkedin.com/in/jonathan-martin-3128233a7" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Miagiqnhtjk" target="_blank">GitHub</a>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/jonathan-martin-3128233a7" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/Miagiqnhtjk" target="_blank" class="btn btn-outline">GitHub</a>
+    </div>
   </section>
+
+  <footer>
+    © 2026 Jonathan Martin. All rights reserved.
+  </footer>
 
 </body>
 </html>
