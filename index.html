@@ -29,7 +29,7 @@
       top: 0;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* center everything */
       align-items: center;
       padding: 15px 40px;
       background: rgba(15, 23, 42, 0.95);
@@ -38,10 +38,12 @@
       z-index: 1000;
     }
 
-    nav h2 { font-weight: 600; }
+    .links {
+      display: flex;
+      gap: 30px; /* even spacing between links */
+    }
 
     nav .links a {
-      margin-left: 20px;
       text-decoration: none;
       color: var(--text);
       font-weight: 500;
@@ -154,6 +156,7 @@
     /* RESPONSIVE */
     @media (max-width: 600px) {
       nav { flex-direction: column; }
+      .links { flex-direction: column; gap: 10px; }
       #home h1 { font-size: 2rem; }
     }
   </style>
@@ -162,7 +165,6 @@
 
   <!-- NAVBAR -->
   <nav>
-    <h2>Jonathan Martin</h2>
     <div class="links">
       <a href="#home">Home</a>
       <a href="#projects">Projects</a>
@@ -174,7 +176,6 @@
   <!-- HERO -->
   <section id="home">
     <h1>Welcome to my portfolio webpage!</h1>
-    <p>I build clean, efficient applications using Python, Java, and modern development practices.</p>
     <div>
       <a href="#projects" class="btn btn-primary">View Projects</a>
       <a href="#contact" class="btn btn-outline">Contact Me</a>
@@ -203,7 +204,7 @@
   <section id="profile">
     <h2>About Me</h2>
     <p>
-      I am a Software and App Design student with experience in Python, Java, and databases. I enjoy solving problems and continuously improving my development skills. My goal is to become a better developer and contribute to real-world applications.
+      I am a Software and App Design student with experience in Python, Java, and databases. I enjoy solving problems and continuously improving my development skills. My goal is to grow as a developer and contribute to real-world applications.
     </p>
   </section>
 
